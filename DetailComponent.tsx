@@ -7,7 +7,7 @@ const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
 
   const params = useParams();
 
-  console.log('props', params.id);
+  console.log('props detail', params.id);
 
   return (
     <div>
