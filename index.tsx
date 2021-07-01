@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+/**
+ * Import libraries:
+ * - React -> JSX
+ * - ReactDom -> DOM methods
+ */
+import * as debug from 'debug';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { HashRouter as Router } from "react-router-dom";
 
-interface AppProps { }
-interface AppState {
-  name: string;
-}
+/* Comment/Uncomment to use class or functional component */
+// import { AppComponent } from "./logic/components/AppComponent.class";
+import { AppComponent as AppComponentFunction } from './AppComponent';
 
-class App extends Component<AppProps, AppState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'React'
-    };
-  }
+const mainDebugger: debug.Debugger = debug.debug('react').extend('main');
 
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
-}
+mainDebugger('Start app');
 
-render(<App />, document.getElementById('root'));
+/**
+ * Buscamos el elemento con id="root" de la pagina html
+ * y ahi inyectamos
+ */
+ReactDOM.render(
+  <Router>
+  <AppComponentFunction compiler="online" framework="REACT" />
+  </Router>,
+  document.getElementById('root')
+);
+
+mainDebugger('App rendered');
