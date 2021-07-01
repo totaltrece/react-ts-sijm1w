@@ -6,6 +6,7 @@ import { IContextDTO } from './IContextDTO.class';
 
 import { ChildComponent } from './ChildComponent';
 import { ListComponent } from './ListComponent';
+import { DetailComponent } from './DetailComponent';
 import { MyContext } from './MyContext';
 
 import { Switch } from 'react-router-dom';
@@ -65,6 +66,10 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <Switch>
         <Route exact path="/list">
           <ListComponent />
+        </Route>
+        <Route exact path="/list/:id">
+          <ListComponent />
+          <DetailComponent />
         </Route>
       </Switch>
     </div>

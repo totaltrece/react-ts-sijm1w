@@ -5,7 +5,7 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-// import { DetailComponent } from './DetailComponent';
+import { DetailComponent } from './DetailComponent';
 
 const ListComponent: (props: IListComponentProps) => React.ReactElement = (
   props: IListComponentProps
@@ -26,12 +26,6 @@ const ListComponent: (props: IListComponentProps) => React.ReactElement = (
           <Link to="/list/3">Detalle 3</Link>
         </li>
       </ul>
-
-      <Switch>
-        <Route path="/list/:id">
-          <DetailComponent />
-        </Route>
-      </Switch>
     </div>
   );
 };
