@@ -10,7 +10,7 @@ const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
 
   const params = useParams();
 
-  const facts: any = useCatFacts();
+  const facts: any = []; // useCatFacts();
 
   return (
     <div>

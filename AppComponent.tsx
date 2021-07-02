@@ -8,7 +8,8 @@ import { ChildComponent } from './ChildComponent';
 import { ListComponent } from './ListComponent';
 import { DetailComponent } from './DetailComponent';
 import { MyContext } from './MyContext';
-import { CustomComponentFetch } from './CustomComponentFetc';
+import { CustomComponentFetch } from './CustomComponentFetch';
+import { HocComponent } from './HocComponent';
 import { useCatFacts } from './CustomHookFetch';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
@@ -50,7 +51,17 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     React.Dispatch<any>
   ] = React.useState<any>({ value: contextState, edit: hola });
 
+  /*
   const facts = useCatFacts();
+
+  custom Hook App
+  {facts.map((element: any) => {
+    return (
+      <p key={element._id}>
+        Fact ({element.user}) <br /> {element.text}
+      </p>
+    );
+  })} */
 
   function hola() {
     console.log('hola');
@@ -61,14 +72,10 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
   return (
     <div>
       Hola '{props.compiler}' and framework '{props.framework}' CAT FACTS FROM
-      custom Hook App
-      {facts.map((element: any) => {
-        return (
-          <p key={element._id}>
-            Fact ({element.user}) <br /> {element.text}
-          </p>
-        );
-      })}
+     
+
+
+      <HocComponent></HocComponent>
       <MyContext.Provider value={contextState2}>
         <ChildComponent />
       </MyContext.Provider>
