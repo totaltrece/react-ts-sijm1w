@@ -10,7 +10,7 @@ const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
 
   const params = useParams();
 
-  const facts = useCatFacts();
+  const facts: any = useCatFacts();
 
   console.log('props detail', params.id);
 
@@ -20,7 +20,7 @@ const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
       CAT FACTS FROM custom Hook Detail
       {facts.map((element: any) => {
         return (
-          <p key={element.user}>
+          <p>
             Fact ({element.user}) <br /> {element.text}
           </p>
         );
