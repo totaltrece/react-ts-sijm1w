@@ -12,8 +12,6 @@ const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
 
   const facts: any = useCatFacts();
 
-  console.log('props detail', params.id);
-
   return (
     <div>
       <p>Detalle el que sea {params.id} </p>

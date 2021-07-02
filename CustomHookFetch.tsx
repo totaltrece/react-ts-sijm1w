@@ -2,7 +2,6 @@ import * as debug from 'debug';
 import * as React from 'react';
 
 function useCatFacts() {
-  console.log('se llama a getCatFacts');
   let initState = [];
 
   const [dataState, setDataState]: [any, React.Dispatch<any>] = React.useState<

@@ -52,8 +52,6 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   const facts = useCatFacts();
 
-  console.log('facts', facts);
-
   function hola() {
     console.log('hola');
     setContextState({ name: Math.random(), surname: 'Gomez' });
