@@ -1,7 +1,7 @@
 import * as debug from 'debug';
 import * as React from 'react';
 
-function useCatFacts() = {
+function useCatFacts() {
 
   console.log("se llama a getCatFacts");
   let initState = [];

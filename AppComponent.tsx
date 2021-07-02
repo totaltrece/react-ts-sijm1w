@@ -52,6 +52,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   const facts = useCatFacts();
 
+  console.log('facts', facts);
+
   function hola() {
     console.log('hola');
     setContextState({ name: Math.random(), surname: 'Gomez' });
@@ -60,7 +62,15 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   return (
     <div>
-      Hola '{props.compiler}' and framework '{props.framework}'
+      Hola '{props.compiler}' and framework '{props.framework}' CAT FACTS FROM
+      custom Hook App
+      {facts.map((element: any) => {
+        return (
+          <p key={element.user}>
+            Fact ({element.user}) <br /> {element.text}
+          </p>
+        );
+      })}
       <MyContext.Provider value={contextState2}>
         <ChildComponent />
       </MyContext.Provider>
