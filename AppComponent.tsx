@@ -9,7 +9,7 @@ import { ListComponent } from './ListComponent';
 import { DetailComponent } from './DetailComponent';
 import { MyContext } from './MyContext';
 import { CustomComponentFetch } from './CustomComponentFetch';
-import { HocComponent } from './HocComponent';
+import { HocComponent, MyHocComponent } from './HocComponent';
 import { useCatFacts } from './CustomHookFetch';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
@@ -69,13 +69,24 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     // setContextState2({ value: { name: Math.random(), surname: 'Gomez' }});
   }
 
+  interface MyDTO {
+    url: string;
+    data: any[];
+  }
+  const MyComponentUrl: (props: MyDTO) => React.ReactElement = (
+    props: MyDTO
+  ) => {
+    console.log('MyComponentUrl data from HOC', props.data);
+
+    return <div><h1>MyComponentUrl que esta wrappeado por MyHocComponent</h1></div>;
+  };
+
+  const WrappedComponent = MyHocComponent(MyComponentUrl);
+
   return (
     <div>
       Hola '{props.compiler}' and framework '{props.framework}' CAT FACTS FROM
-     
-
-
-      <HocComponent></HocComponent>
+      <WrappedComponent />
       <MyContext.Provider value={contextState2}>
         <ChildComponent />
       </MyContext.Provider>
