@@ -66,7 +66,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       custom Hook App
       {facts.map((element: any) => {
         return (
-          <p>
+          <p key={element._id}>
             Fact ({element.user}) <br /> {element.text}
           </p>
         );

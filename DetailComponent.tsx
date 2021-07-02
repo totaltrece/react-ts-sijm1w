@@ -20,7 +20,7 @@ const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
       CAT FACTS FROM custom Hook Detail
       {facts.map((element: any) => {
         return (
-          <p>
+          <p key={element._id}>
             Fact ({element.user}) <br /> {element.text}
           </p>
         );
