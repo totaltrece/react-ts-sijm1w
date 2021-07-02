@@ -8,7 +8,8 @@ import { ChildComponent } from './ChildComponent';
 import { ListComponent } from './ListComponent';
 import { DetailComponent } from './DetailComponent';
 import { MyContext } from './MyContext';
-
+import { CustomComponentFetch } from './CustomComponentFetc';
+import { useCatFacts } from './CustomHookFetch';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -49,6 +50,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     React.Dispatch<any>
   ] = React.useState<any>({ value: contextState, edit: hola });
 
+  const facts = useCatFacts();
+
   function hola() {
     console.log('hola');
     setContextState({ name: Math.random(), surname: 'Gomez' });
@@ -57,7 +60,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   return (
     <div>
-      Hola '{props.compiler}' and framework '{props.framework}' from
+      Hola '{props.compiler}' and framework '{props.framework}'
       <MyContext.Provider value={contextState2}>
         <ChildComponent />
       </MyContext.Provider>

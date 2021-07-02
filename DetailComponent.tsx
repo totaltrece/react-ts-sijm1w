@@ -2,6 +2,8 @@ import * as debug from 'debug';
 import * as React from 'react';
 import { useParams } from 'react-router';
 
+import { CustomComponentFetch } from './CustomComponentFetch';
+
 const DetailComponent: (props: any) => React.ReactElement = (props: any) => {
   //mainDebugger('ListComponent function');
 
